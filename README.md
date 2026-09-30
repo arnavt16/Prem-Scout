@@ -298,4 +298,4 @@ Market values are not transfer fees or asking prices, and this is a look back at
 
 ## License
 
-MIT
+Copyright (c) 2026 Arnav Thorat. All rights reserved. The code is public so it can be viewed, but it may not be copied, reused or redistributed without permission. See [LICENSE](LICENSE).

@@ -16,3 +16,17 @@ backend/data/raw/*.csv
 
 # Editor
 .vscode/
+
+# Secrets: never commit environment files, keys or credentials, anywhere.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*secret*
+*credential*
+id_rsa*
+.npmrc
+.pypirc
