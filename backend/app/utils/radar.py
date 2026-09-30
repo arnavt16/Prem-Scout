@@ -16,7 +16,7 @@ OUTFIELD_RADAR = [
     {"key": "goal_threat", "label": "Goal Threat (xG)", "column": "ss_expectedGoals_p90", "invert": False},
     {"key": "creation", "label": "Chance Creation (xA)", "column": "ss_expectedAssists_p90", "invert": False},
     {"key": "dribbling", "label": "Dribbling", "column": "ss_successfulDribbles_p90", "invert": False},
-    {"key": "progression", "label": "Final-Third Passing", "column": "ss_accurateFinalThirdPasses_p90", "invert": False},
+    {"key": "progression", "label": "Final Third Passing", "column": "ss_accurateFinalThirdPasses_p90", "invert": False},
     {"key": "defense", "label": "Defensive Work", "column": "_defense_score", "invert": False},
     {"key": "aerial", "label": "Aerial Duels", "column": "ss_aerialDuelsWon_p90", "invert": False},
 ]

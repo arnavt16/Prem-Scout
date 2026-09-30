@@ -51,7 +51,7 @@ export function Layout() {
           <Text size="sm" c="dimmed">
             Built by{' '}
             <Anchor href="https://github.com/arnavt16" c="turf.4" underline="hover">Arnav Thorat</Anchor>
-            {' '}· 2025–26 Premier League season
+            {' '}· 2025/26 Premier League season
           </Text>
           <Text size="xs" c="dimmed">
             A fan project. Not affiliated with the Premier League or any club. Crests belong to their clubs.

@@ -93,8 +93,26 @@ def main():
     rho, p_value = spearmanr(gap, premium)
     said_under = gap > 0
     shortlisted = deals[deals["eligible_for_ranking"]]
+    fee, value, estimate = deals["fee_eur"], deals["market_value_in_eur"], deals["estimated_market_value_eur"]
+    top_quarter = estimate >= estimate.quantile(0.75)
     results = {
         "n_deals": int(len(deals)),
+        # How far real fees ran above market values: the headline for fans.
+        "n_sold_above_value": int((fee > value).sum()),
+        "n_sold_25pct_above_value": int((fee >= 1.25 * value).sum()),
+        "n_sold_above_estimate": int((fee > estimate).sum()),
+        "total_fees_eur": float(fee.sum()),
+        "total_market_value_eur": float(value.sum()),
+        # Does a high estimate pick out the players who command big fees?
+        "top_quarter_by_estimate": {"n": int(top_quarter.sum()),
+                                    "median_fee_eur": float(fee[top_quarter].median()),
+                                    "rest_median_fee_eur": float(fee[~top_quarter].median())},
+        "sold_above_value_by_model_call": {
+            "model_said_undervalued": {"n": int(said_under.sum()),
+                                       "sold_above": int((fee[said_under] > value[said_under]).sum())},
+            "model_said_overvalued": {"n": int((~said_under).sum()),
+                                      "sold_above": int((fee[~said_under] > value[~said_under]).sum())},
+        },
         "n_confirmed_by_premier_league": int(deals["confirmed_by_premier_league"].sum()),
         "gbp_to_eur": GBP_TO_EUR,
         "median_fee_over_valuation": float(np.exp(np.median(premium))),

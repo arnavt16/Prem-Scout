@@ -37,10 +37,10 @@ export function FilterSidebar({ filters, onChange, sticky = false }) {
             </Group>
           </Chip.Group>
         </Section>
-        <Section title={`Age: ${filters.age[0]}–${filters.age[1]}`}>
+        <Section title={`Age: ${filters.age[0]} to ${filters.age[1]}`}>
           <RangeSlider min={15} max={40} minRange={1} value={filters.age} onChange={set('age')} label={null} />
         </Section>
-        <Section title={`Market value: €${filters.value[0]}M–€${filters.value[1]}M${filters.value[1] === 200 ? '+' : ''}`}>
+        <Section title={`Market value: €${filters.value[0]}M to €${filters.value[1]}M${filters.value[1] === 200 ? '+' : ''}`}>
           <RangeSlider min={0} max={200} step={5} minRange={5} value={filters.value} onChange={set('value')} label={null} />
         </Section>
         <Section title="Price verdict">

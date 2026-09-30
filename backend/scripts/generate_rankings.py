@@ -125,15 +125,16 @@ def main():
         "default_sort": "conservative_gap_eur", "valuation_date_max": str(df.valuation_date.max()),
         # Provenance and freshness of every input, shown on the dashboard.
         "data_sources": [
-            {"name": "FBref", "scope": "Big-5 leagues, 2025-26", "coverage": "Full season",
+            {"name": "FBref", "scope": "Big 5 leagues, 2025/26", "coverage": "Full season",
              "used_for": "Minutes, club strength, goalkeeper stats, identity"},
-            {"name": "SofaScore (Kaggle export)", "scope": "Premier League, 2025-26",
-             "coverage": "Through matchday 35 of 38",
+            {"name": "SofaScore (Kaggle export)", "scope": "Premier League, 2025/26",
+             "coverage": "Up to matchday 35 of 38",
              "used_for": "Outfield model, production check, radar, similar players"},
-            {"name": "Fantasy Premier League (vaastav community archive)", "scope": "Premier League, 2025-26",
-             "coverage": "Full season", "used_for": "Outfield model, birth-date identity checks"},
+            {"name": "Fantasy Premier League (vaastav community archive)", "scope": "Premier League, 2025/26",
+             "coverage": "Full season", "used_for": "Outfield model, birth date identity checks"},
             {"name": "Transfermarkt (dcaribou dataset)", "scope": "Market valuations",
-             "coverage": f"Latest valuation {df.valuation_date.max()}; dataset updates paused",
+             # Written out ("11 June 2026") because the site shows it verbatim.
+             "coverage": f"Values up to {pd.Timestamp(df.valuation_date.max()):%-d %B %Y}; no longer updated",
              "used_for": "Target the model learns to estimate"},
         ]}
     (ARTIFACTS / "screening_metrics.json").write_text(json.dumps(metrics, indent=2))

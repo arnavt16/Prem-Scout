@@ -84,8 +84,8 @@ export function Players() {
       </Group>
       <Text c="dimmed" mb="xl" maw={760}>
         {club
-          ? `Every ${club.display} player from the 2025–26 season. Click a player to see their full profile.`
-          : 'All 518 Premier League players from the 2025–26 season with a market value. Use the filters to narrow it down, and click any player for their radar chart, stats and our price verdict.'}
+          ? `Every ${club.display} player from the 2025/26 season. Click a player to see their full profile.`
+          : 'All 518 Premier League players from the 2025/26 season with a market value. Use the filters to narrow it down, and click any player for their radar chart, stats and our price verdict.'}
       </Text>
       <Grid gutter="xl">
         <Grid.Col span={{ base: 12, md: 3 }}>

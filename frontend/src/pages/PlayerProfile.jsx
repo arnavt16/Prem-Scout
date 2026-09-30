@@ -10,10 +10,10 @@ import { useFetch } from '../hooks/useFetch';
 import { api } from '../services/api';
 import { CHART, tooltipStyle } from '../utils/chartColors';
 import { clubInfo } from '../utils/clubs';
-import { formatEur, formatPct } from '../utils/format';
-import { positionLabel, verdictKey, verdictSentence } from '../utils/player';
+import { formatDate, formatEur, formatPct } from '../utils/format';
+import { positionLabel, roleLabel, verdictKey, verdictSentence } from '../utils/player';
 
-const num = (v, digits = 2) => (v == null ? '—' : Number(v).toFixed(digits));
+const num = (v, digits = 2) => (v == null ? 'N/A' : Number(v).toFixed(digits));
 
 function Money({ label, value, color, hint }) {
   return (
@@ -26,7 +26,7 @@ function Money({ label, value, color, hint }) {
 }
 
 function StatGroup({ title, rows }) {
-  const visible = rows.filter(([, v]) => v != null && v !== '—');
+  const visible = rows.filter(([, v]) => v != null && v !== 'N/A');
   if (!visible.length) return null;
   return (
     <div>
@@ -71,7 +71,7 @@ function statGroups(p) {
     ]],
     ['Passing & defending', [
       ['Pass accuracy', formatPct(p.pass_completion_pct, { showSign: false })],
-      ['Final-third passes per 90', num(p.final_third_passes_per90, 1)],
+      ['Final third passes per 90', num(p.final_third_passes_per90, 1)],
       ['Tackles won per 90', num(p.tackles_won_per90)], ['Interceptions per 90', num(p.interceptions_per90)],
       ['Aerial duels won', formatPct(p.aerial_win_pct, { showSign: false })],
     ]],
@@ -119,16 +119,16 @@ export function PlayerProfile() {
         <ClubBadge club={p.club} size={72} />
         <div style={{ minWidth: 0 }}>
           <Title order={1}>{p.name}</Title>
-          <Text c="dimmed" size="lg">{club.display} · {p.sub_position} · Age {Math.round(p.age)}</Text>
+          <Text c="dimmed" size="lg">{club.display} · {roleLabel(p.sub_position)} · Age {Math.round(p.age)}</Text>
           <Group gap={8} mt={6}><VerdictBadge player={p} size="lg" /></Group>
         </div>
       </Group>
 
       <SimpleGrid cols={{ base: 1, sm: 3 }}>
-        <Money label="Market value" value={formatEur(p.market_value_eur)} hint={`Transfermarkt, ${p.valuation_date.slice(0, 10)}`} />
+        <Money label="Market value" value={formatEur(p.market_value_eur)} hint={`Transfermarkt, ${formatDate(p.valuation_date)}`} />
         <Money label="Our estimate" value={formatEur(p.estimated_market_value_eur)} color="turf.4"
           hint={unrated ? 'Needs 900+ minutes' : 'From stats, age, minutes and team strength'} />
-        <Money label="Difference" value={diff == null ? '—' : `${diff > 0 ? '+' : ''}${formatEur(diff)}`}
+        <Money label="Difference" value={diff == null ? 'N/A' : `${formatEur(Math.abs(diff))} ${diff > 0 ? 'more' : 'less'}`}
           color={diff == null ? undefined : diff > 0 ? 'turf.4' : 'orange.4'}
           hint={diff == null ? undefined : diff > 0 ? 'Stats point higher than the market' : 'Market pays more than stats suggest'} />
       </SimpleGrid>

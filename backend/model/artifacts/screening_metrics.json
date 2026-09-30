@@ -130,26 +130,26 @@
     "data_sources": [
       {
         "name": "FBref",
-        "scope": "Big-5 leagues, 2025-26",
+        "scope": "Big 5 leagues, 2025/26",
         "coverage": "Full season",
         "used_for": "Minutes, club strength, goalkeeper stats, identity"
       },
       {
         "name": "SofaScore (Kaggle export)",
-        "scope": "Premier League, 2025-26",
-        "coverage": "Through matchday 35 of 38",
+        "scope": "Premier League, 2025/26",
+        "coverage": "Up to matchday 35 of 38",
         "used_for": "Outfield model, production check, radar, similar players"
       },
       {
         "name": "Fantasy Premier League (vaastav community archive)",
-        "scope": "Premier League, 2025-26",
+        "scope": "Premier League, 2025/26",
         "coverage": "Full season",
-        "used_for": "Outfield model, birth-date identity checks"
+        "used_for": "Outfield model, birth date identity checks"
       },
       {
         "name": "Transfermarkt (dcaribou dataset)",
         "scope": "Market valuations",
-        "coverage": "Latest valuation 2026-06-11; dataset updates paused",
+        "coverage": "Values up to 11 June 2026; no longer updated",
         "used_for": "Target the model learns to estimate"
       }
     ]

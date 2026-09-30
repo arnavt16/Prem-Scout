@@ -8,7 +8,7 @@ export const SORT_OPTIONS = [
   { value: 'xg', label: 'Most xG (expected goals)' },
   { value: 'minutes', label: 'Most minutes' },
   { value: 'age_asc', label: 'Youngest first' },
-  { value: 'name', label: 'Name (A–Z)' },
+  { value: 'name', label: 'Name (A to Z)' },
 ];
 
 export const DEFAULT_FILTERS = {

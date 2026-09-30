@@ -4,7 +4,8 @@ import { CHART, tooltipStyle } from '../../utils/chartColors';
 const EDGES = [0, 5, 10, 20, 40, 80, Infinity];
 
 function bucketLabel(lo, hi) {
-  return hi === Infinity ? `€${lo}M+` : `€${lo}–${hi}M`;
+  if (lo === 0) return `Under €${hi}M`;
+  return hi === Infinity ? `€${lo}M+` : `€${lo} to ${hi}M`;
 }
 
 /** How many players fall into each market-value band. */

@@ -11,7 +11,8 @@ function Factor({ c, max }) {
     <div>
       <Group justify="space-between" mb={4} wrap="nowrap">
         <Text size="sm">{c.group}</Text>
-        <Text size="sm" fw={700} c={up ? 'turf.4' : 'orange.4'}>{up ? '+' : ''}{pct(c.impact)}%</Text>
+        {/* The column heading says up or down, so no plus or minus sign is needed. */}
+        <Text size="sm" fw={700} c={up ? 'turf.4' : 'orange.4'}>{Math.abs(pct(c.impact))}%</Text>
       </Group>
       <Progress value={(Math.abs(c.impact) / max) * 100} color={up ? 'turf' : 'orange'} size="sm"
         aria-label={`${c.group} ${up ? 'raised' : 'lowered'} the estimate`} />

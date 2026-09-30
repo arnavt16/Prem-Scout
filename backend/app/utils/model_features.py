@@ -23,8 +23,8 @@ FEATURE_LABELS = {
 SOFASCORE_LABELS = {
     "expectedGoals": "xG", "expectedAssists": "xA (expected assists)", "keyPasses": "Key passes",
     "bigChancesCreated": "Big chances created", "successfulDribbles": "Successful dribbles",
-    "accurateFinalThirdPasses": "Accurate final-third passes",
-    "accurateOppositionHalfPasses": "Accurate opposition-half passes", "accuratePasses": "Accurate passes",
+    "accurateFinalThirdPasses": "Accurate final third passes",
+    "accurateOppositionHalfPasses": "Accurate opposition half passes", "accuratePasses": "Accurate passes",
     "accurateLongBalls": "Accurate long balls", "touches": "Touches", "ballRecovery": "Ball recoveries",
     "possessionWonAttThird": "Possession won in final third", "tacklesWon": "Tackles won",
     "interceptions": "Interceptions", "clearances": "Clearances", "aerialDuelsWon": "Aerial duels won",
@@ -39,7 +39,7 @@ for _stat, _label in SOFASCORE_LABELS.items():
 FEATURE_LABELS.update({
     "ss_accuratePassesPercentage": "Pass completion", "ss_aerialDuelsWonPercentage": "Aerial duel win rate",
     "ss_groundDuelsWonPercentage": "Ground duel win rate", "ss_successfulDribblesPercentage": "Dribble success rate",
-    "ss_rating": "SofaScore match rating", "ss_np_goals_minus_xg_p90": "Non-penalty goals minus xG per 90",
+    "ss_rating": "SofaScore match rating", "ss_np_goals_minus_xg_p90": "Goals minus xG per 90 (excluding penalties)",
     "ss_start_share": "Share of appearances started",
 })
 FEATURE_LABELS.update({

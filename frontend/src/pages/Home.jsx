@@ -33,7 +33,7 @@ function Fact({ value, label }) {
 }
 
 const STEPS = [
-  ['Collect the season', 'Stats for every Premier League player from 2025–26: goals, expected goals, passing, dribbling, defending and match ratings, plus each player\'s Transfermarkt market value.'],
+  ['Collect the season', 'Stats for every Premier League player from 2025/26: goals, expected goals, passing, dribbling, defending and match ratings, plus each player\'s Transfermarkt market value.'],
   ['Learn what drives prices', 'A model studies how stats, age, minutes played and team strength line up with market values across the league.'],
   ['Estimate every player', 'Each player gets an estimate from a version of the model that never saw their own price, so it can\'t just copy the answer.'],
   ['Flag the value picks', 'Regular starters who perform well for their position, and whose stats point to a clearly higher price even after allowing for the model\'s usual error.'],
@@ -60,7 +60,7 @@ export function Home() {
   return (
     <Stack gap={56}>
       <section>
-        <Text c="turf.4" fw={700} tt="uppercase" size="sm" style={{ letterSpacing: 1 }}>2025–26 Premier League</Text>
+        <Text c="turf.4" fw={700} tt="uppercase" size="sm" style={{ letterSpacing: 1 }}>2025/26 Premier League</Text>
         <Title order={1} size="clamp(40px, 7vw, 72px)" lh={1.05} mt={6} style={{ letterSpacing: -1.5 }}>
           Prem Scout
         </Title>
@@ -81,7 +81,7 @@ export function Home() {
         <Fact value={players.length} label="players with a market value" />
         <Fact value="20" label="clubs" />
         <Fact value={picks.length} label="value picks" />
-        <Fact value={typicalError ? `±${formatEur(typicalError)}` : '—'} label="typical gap between our estimate and market value" />
+        <Fact value={typicalError ? `±${formatEur(typicalError)}` : 'N/A'} label="typical gap between our estimate and market value" />
       </SimpleGrid>
 
       <Section id="clubs" title="Pick a club" intro="Jump straight to a squad. Each card shows the squad's total market value.">
@@ -167,30 +167,57 @@ export function Home() {
       </Section>
 
       {check && (
-        <Section title="Does it actually work? We checked."
-          intro="Our estimates were made in June 2026, before the summer transfer window. So we compared them with the fees clubs actually paid for the players who moved.">
+        <Section title="Did players sell for more than their market value?"
+          intro={`Our estimates were made in June 2026, before the summer transfer window opened. ${check.n_deals} of these players then moved for a reported fee, so we compared what clubs actually paid with each player's market value.`}>
           <Card>
-            <SimpleGrid cols={{ base: 1, md: 3 }} spacing="lg" mb="md">
+            <SimpleGrid cols={{ base: 1, md: 3 }} spacing="lg" mb="lg">
               <div>
-                <Text fw={800} size="28px">{check.n_deals}</Text>
-                <Text size="sm" c="dimmed">players sold this summer for a reported fee</Text>
+                <Text fw={800} size="32px" c="turf.4">{check.n_sold_above_value} of {check.n_deals}</Text>
+                <Text size="sm" c="dimmed">sold for more than their market value</Text>
               </div>
               <div>
-                <Text fw={800} size="28px">{check.median_fee_over_valuation.toFixed(2)}×</Text>
-                <Text size="sm" c="dimmed">typical fee compared with the player&apos;s market value (clubs usually pay a premium)</Text>
+                <Text fw={800} size="32px" c="turf.4">
+                  {Math.round((check.total_fees_eur / check.total_market_value_eur - 1) * 100)}% more
+                </Text>
+                <Text size="sm" c="dimmed">
+                  paid in total: {formatEur(check.total_fees_eur)} for players valued at {formatEur(check.total_market_value_eur)}
+                </Text>
               </div>
               <div>
-                <Text fw={800} size="28px" c="orange.4">Not yet</Text>
-                <Text size="sm" c="dimmed">did our &quot;worth more&quot; calls sell for bigger premiums</Text>
+                <Text fw={800} size="32px" c="turf.4">
+                  {formatEur(check.top_quarter_by_estimate.median_fee_eur)}
+                </Text>
+                <Text size="sm" c="dimmed">
+                  typical fee for the {check.top_quarter_by_estimate.n} players our model rated highest, against{' '}
+                  {formatEur(check.top_quarter_by_estimate.rest_median_fee_eur)} for the rest
+                </Text>
               </div>
             </SimpleGrid>
-            <Text>
-              Honest answer: the model is good at telling the best players from the rest, but it couldn&apos;t beat
-              the market. Market values predicted the actual fees better than our estimates did, and players we
-              flagged as worth more didn&apos;t sell for bigger premiums than anyone else. Forty transfers is a small
-              sample, and fees also depend on contracts and negotiations, so treat value picks as players worth a
-              closer look, not guaranteed bargains.
-            </Text>
+            <Stack gap="sm">
+              <Text>
+                <b>Transfer fees run well ahead of market values.</b>{' '}
+                {Math.round((check.n_sold_above_value / check.n_deals) * 100)}% of these players went for more than
+                their listed value, and {check.n_sold_25pct_above_value} of the {check.n_deals} went for at least
+                25% more. That&apos;s how inflated the transfer market is: a market value is closer to a starting
+                point than a price tag, and clubs routinely pay a premium on top.
+              </Text>
+              <Text>
+                <b>The model is useful for sizing players up.</b> Using only stats, age, minutes and team strength,
+                it picked out the players clubs paid the most for: the {check.top_quarter_by_estimate.n} it rated
+                highest sold for about{' '}
+                {Math.round(check.top_quarter_by_estimate.median_fee_eur / check.top_quarter_by_estimate.rest_median_fee_eur * 10) / 10}
+                {' '}times as much as the rest. That makes it a good second opinion on what a player&apos;s season
+                is really worth.
+              </Text>
+              <Text size="sm" c="dimmed">
+                What it can&apos;t do yet is predict which players will sell above their market value. Players it
+                rated as worth more beat their market value {check.sold_above_value_by_model_call.model_said_undervalued.sold_above}{' '}
+                times out of {check.sold_above_value_by_model_call.model_said_undervalued.n}, about as often as
+                everyone else ({check.sold_above_value_by_model_call.model_said_overvalued.sold_above} out of{' '}
+                {check.sold_above_value_by_model_call.model_said_overvalued.n}). So treat value picks as players
+                worth a closer look rather than guaranteed bargains.
+              </Text>
+            </Stack>
           </Card>
         </Section>
       )}
@@ -224,12 +251,12 @@ export function Home() {
       <Section title="About the project">
         <Card>
           <Text mb="sm">
-            Prem Scout is a fan-made project by{' '}
-            <Anchor href="https://github.com/arnavt16" c="turf.4">Arnav Thorat</Anchor>. It looks back at the 2025–26
+            Prem Scout is a fan project by{' '}
+            <Anchor href="https://github.com/arnavt16" c="turf.4">Arnav Thorat</Anchor>. It looks back at the 2025/26
             Premier League season and asks a simple question: do players&apos; prices match how they actually played?
           </Text>
           <Text size="sm" c="dimmed">
-            Under the hood: Python and scikit-learn for the model, FastAPI for the data, and React for this site.
+            Under the hood: Python for the model, FastAPI for the data, and React for this site.
             Market values aren&apos;t transfer fees or asking prices, and the site doesn&apos;t know about injuries,
             wages or contracts.
           </Text>

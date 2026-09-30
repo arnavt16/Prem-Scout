@@ -7,6 +7,11 @@ export const POSITIONS = {
   FW: { label: 'Forward', plural: 'Forwards' },
 };
 
+/** Transfermarkt roles are hyphenated ("Centre-Back"); the site shows them as words. */
+export function roleLabel(role) {
+  return role ? role.replace(/-/g, ' ') : '';
+}
+
 export function positionLabel(code) {
   return POSITIONS[code]?.label ?? code;
 }
@@ -49,7 +54,7 @@ export function verdictSentence(p) {
   const base = `Based on their stats, age, minutes and team, our model puts ${p.name} at about ${formatEur(p.estimated_market_value_eur)}, ${compare}.`;
   const tail = {
     pick: " They're a regular who performs well for their position, and the gap holds up even after allowing for the model's usual margin of error, which makes them one of our value picks.",
-    under: ' Their stats point to a higher price, though the gap is within what the model usually gets wrong, or they miss one of the value-pick checks.',
+    under: ' Their stats point to a higher price, though the gap is within what the model usually gets wrong, or they miss one of the value pick checks.',
     fair: ' That lines up with the market, so the price looks about right.',
     over: " The market rates them above what their stats alone suggest. That's often reputation, potential, or things stats don't capture.",
   }[key];
