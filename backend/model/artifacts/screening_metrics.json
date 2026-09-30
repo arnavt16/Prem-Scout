@@ -1,0 +1,157 @@
+{
+  "outfield": {
+    "n": 314,
+    "r2_eur": 0.7798987881955752,
+    "mae_eur": 7644163.22416942,
+    "empirical_lower_coverage": 0.802547770700637,
+    "folds": [
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.27169662091367996,
+        "inner_mae_log": {
+          "lightgbm": 0.3472467195478744,
+          "regularized_lightgbm": 0.39276416764001437,
+          "ridge": 0.28324456532419245
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.2953270963343151,
+        "inner_mae_log": {
+          "lightgbm": 0.35991206268164566,
+          "regularized_lightgbm": 0.39065630133357604,
+          "ridge": 0.28967020930458626
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.31292201298070665,
+        "inner_mae_log": {
+          "lightgbm": 0.3625201618990963,
+          "regularized_lightgbm": 0.39593540595359555,
+          "ridge": 0.31117476487966733
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.2957119969246982,
+        "inner_mae_log": {
+          "lightgbm": 0.36588310991562994,
+          "regularized_lightgbm": 0.3894729777804409,
+          "ridge": 0.30372834168037355
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.33169118673780673,
+        "inner_mae_log": {
+          "lightgbm": 0.3555853605690141,
+          "regularized_lightgbm": 0.3963820261417406,
+          "ridge": 0.2932485217456372
+        }
+      }
+    ],
+    "premier_league": {
+      "n": 314,
+      "r2_eur": 0.7798987881955752,
+      "mae_eur": 7644163.22416942,
+      "empirical_lower_coverage": 0.802547770700637
+    }
+  },
+  "goalkeepers": {
+    "n": 113,
+    "r2_eur": 0.7440401825217844,
+    "mae_eur": 3558444.744212147,
+    "empirical_lower_coverage": 0.584070796460177,
+    "folds": [
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.0,
+        "inner_mae_log": {
+          "lightgbm": 0.6320900041343163,
+          "regularized_lightgbm": 0.9931090084185286,
+          "ridge": 0.4995220071629385
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.07840650898135948,
+        "inner_mae_log": {
+          "lightgbm": 0.5970577700790566,
+          "regularized_lightgbm": 0.9216187118703766,
+          "ridge": 0.4879350070121777
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.058555629924839536,
+        "inner_mae_log": {
+          "lightgbm": 0.6537234204202487,
+          "regularized_lightgbm": 1.0359040678836107,
+          "ridge": 0.5279635795650717
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.04595783935486253,
+        "inner_mae_log": {
+          "lightgbm": 0.5927398624541781,
+          "regularized_lightgbm": 1.0310547597480464,
+          "ridge": 0.5113162944067454
+        }
+      },
+      {
+        "selected_candidate": "ridge",
+        "margin_log": 0.12862744628291978,
+        "inner_mae_log": {
+          "lightgbm": 0.5586781150086264,
+          "regularized_lightgbm": 0.9976047237132746,
+          "ridge": 0.49123730458193937
+        }
+      }
+    ],
+    "premier_league": {
+      "n": 24,
+      "r2_eur": 0.824434618164321,
+      "mae_eur": 3979073.40850502,
+      "empirical_lower_coverage": 0.7916666666666666
+    }
+  },
+  "methodology": {
+    "version": "bargain-screen-v4",
+    "season": "2025-26",
+    "prediction": "Nested 5-fold held-out estimates; model selection on inner 4-fold log MAE",
+    "buffer": "80th percentile of training PL inner held-out log overprediction; empirical, not guaranteed coverage",
+    "min_minutes": 1800,
+    "min_value_eur": 1000000,
+    "min_performance_percentile": 50,
+    "default_sort": "conservative_gap_eur",
+    "valuation_date_max": "2026-06-11",
+    "data_sources": [
+      {
+        "name": "FBref",
+        "scope": "Big-5 leagues, 2025-26",
+        "coverage": "Full season",
+        "used_for": "Minutes, club strength, goalkeeper stats, identity"
+      },
+      {
+        "name": "SofaScore (Kaggle export)",
+        "scope": "Premier League, 2025-26",
+        "coverage": "Through matchday 35 of 38",
+        "used_for": "Outfield model, production check, radar, similar players"
+      },
+      {
+        "name": "Fantasy Premier League (vaastav community archive)",
+        "scope": "Premier League, 2025-26",
+        "coverage": "Full season",
+        "used_for": "Outfield model, birth-date identity checks"
+      },
+      {
+        "name": "Transfermarkt (dcaribou dataset)",
+        "scope": "Market valuations",
+        "coverage": "Latest valuation 2026-06-11; dataset updates paused",
+        "used_for": "Target the model learns to estimate"
+      }
+    ]
+  }
+}

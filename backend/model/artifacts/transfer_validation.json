@@ -1,0 +1,67 @@
+{
+  "n_deals": 40,
+  "n_confirmed_by_premier_league": 37,
+  "gbp_to_eur": 1.17,
+  "median_fee_over_valuation": 1.2649161976245642,
+  "median_fee_over_estimate": 1.5175154758883496,
+  "premium_adjusted_log_mae": {
+    "transfermarkt_valuation": 0.27350422579662165,
+    "model_estimate": 0.3646804187919969
+  },
+  "rank_correlation_with_fee": {
+    "transfermarkt_valuation": 0.9147714029597787,
+    "model_estimate": 0.8137582256340941
+  },
+  "gap_predicts_premium": {
+    "spearman": 0.10076464893143168,
+    "p_value": 0.5361397620247573,
+    "bootstrap_90_ci": [
+      -0.17769780073672442,
+      0.37377881236742594
+    ]
+  },
+  "median_fee_over_valuation_by_model_call": {
+    "model_said_undervalued": {
+      "n": 14,
+      "ratio": 1.1991815390658576
+    },
+    "model_said_overvalued": {
+      "n": 26,
+      "ratio": 1.2649161976245642
+    }
+  },
+  "shortlisted_players_sold": [
+    {
+      "player": "Leandro Trossard",
+      "club": "Arsenal",
+      "moved_to": "Be\u015fikta\u015f",
+      "market_value_eur": 18000000.0,
+      "estimated_value_eur": 28764584.07355871,
+      "fee_eur": 17901000.0
+    },
+    {
+      "player": "Pascal Struijk",
+      "club": "Leeds United",
+      "moved_to": "Brighton & Hove Albion",
+      "market_value_eur": 22000000.0,
+      "estimated_value_eur": 32429077.17745774,
+      "fee_eur": 23400000.0
+    },
+    {
+      "player": "Curtis Jones",
+      "club": "Liverpool",
+      "moved_to": "Inter Milan",
+      "market_value_eur": 35000000.0,
+      "estimated_value_eur": 49115487.41384715,
+      "fee_eur": 35100000.0
+    },
+    {
+      "player": "Danny Welbeck",
+      "club": "Brighton",
+      "moved_to": "Chelsea",
+      "market_value_eur": 3000000.0,
+      "estimated_value_eur": 4283848.349825754,
+      "fee_eur": 5850000.0
+    }
+  ]
+}

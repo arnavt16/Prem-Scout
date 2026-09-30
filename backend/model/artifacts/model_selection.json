@@ -1,0 +1,12 @@
+{
+  "outfield": {
+    "lightgbm_r2_eur": 0.6618050832105937,
+    "linear_regression_r2_eur": 0.7437492404455586,
+    "chosen_model": "linear_regression"
+  },
+  "goalkeepers": {
+    "lightgbm_r2_eur": 0.6841248539888538,
+    "linear_regression_r2_eur": 0.5040630703992305,
+    "chosen_model": "lightgbm"
+  }
+}

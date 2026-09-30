@@ -1,0 +1,15 @@
+pandas>=2.2
+numpy>=1.26
+scikit-learn==1.9.0  # Must match the saved Ridge fold artifacts
+joblib>=1.4
+lightgbm>=4.3
+shap>=0.45
+fastapi>=0.111
+uvicorn[standard]>=0.30
+pydantic>=2.7
+unidecode>=1.3
+rapidfuzz>=3.9
+pytest>=8.2
+httpx>=0.27
+matplotlib>=3.8
+jupyter>=1.0

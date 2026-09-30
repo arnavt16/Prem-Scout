@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--mantine-color-dark-7);
+  color-scheme: dark;
+}
+
+a {
+  color: inherit;
+}
+
+/* Cards that act as links lift slightly on hover. */
+.hover-card {
+  transition: border-color 120ms ease, transform 120ms ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.hover-card:hover {
+  border-color: var(--mantine-color-turf-7);
+  transform: translateY(-2px);
+}
+
+.hover-card:focus-visible {
+  outline: 2px solid var(--mantine-color-turf-5);
+  outline-offset: 2px;
+}

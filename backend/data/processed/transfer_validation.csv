@@ -1,0 +1,41 @@
+player_id,Player,Squad,Moving to,Fee,fee_eur,market_value_in_eur,estimated_market_value_eur,eligible_for_ranking,confirmed_by_premier_league
+648195,Enzo Fernández,Chelsea,Manchester City,£125m[667],146250000.0,90000000,73398655.70358805,False,True
+503743,Morgan Rogers,Aston Villa,Chelsea,£117m[375],136890000.0,90000000,79744530.58890033,False,True
+567576,Elliot Anderson,Nottingham Forest,Manchester City,£116m[388],135720000.0,75000000,72096395.8634946,False,True
+397033,Sandro Tonali,Newcastle United,Tottenham Hotspur,£92.5m[265],108225000.0,80000000,34878539.35388169,False,True
+880245,Mateus Fernandes,West Ham United,Tottenham Hotspur,£85m[219],99450000.0,50000000,47196178.89963281,False,True
+520624,Bruno Guimarães,Newcastle United,Arsenal,£75m[511],87750000.0,70000000,59178605.754085265,False,True
+503733,Anthony Gordon,Newcastle United,Barcelona,£69.3m[137],81081000.0,65000000,55188535.00944857,False,True
+973085,Carlos Baleba,Brighton,Manchester United,£65m[597],76050000.0,55000000,30314647.6329581,False,True
+357565,Rodri,Manchester City,Barcelona,£65m[570],76050000.0,50000000,37884573.5677265,False,True
+623570,Iliman Ndiaye,Everton,Manchester City,£60m[683],70200000.0,55000000,47461235.46938243,False,True
+655488,Gabriel Martinelli,Arsenal,Al-Hilal,£60m[705],70200000.0,45000000,49983091.527545705,False,True
+474701,Crysencio Summerville,West Ham United,Al Hilal,£55m[404],64349999.99999999,35000000,49293992.804223455,False,False
+460939,Tijjani Reijnders,Manchester City,Al Qadsiah,£52m[579],60840000.0,50000000,48257577.55143095,False,True
+576314,Jan Paul van Hecke,Brighton,Tottenham Hotspur,£52m[45],60840000.0,45000000,55750251.106398635,False,True
+434224,Maxence Lacroix,Crystal Palace,Chelsea,£52m[444],60840000.0,50000000,33692582.734111086,False,True
+413403,Ezri Konsa,Aston Villa,Arsenal,£51m[586],59670000.0,40000000,32576519.346873693,False,True
+324358,Ollie Watkins,Aston Villa,Al Hilal,£51m[649],59670000.0,25000000,27884279.84241138,False,True
+743600,Andrey Santos,Chelsea,Manchester United,£48m[311],56160000.0,40000000,24628988.25843285,False,True
+284857,Marc Cucurella,Chelsea,Real Madrid,£47.5m[110],55575000.0,50000000,21732118.15120832,False,True
+610849,Liam Delap,Chelsea,Nottingham Forest,£45m[619],52650000.0,28000000,28259324.022729985,False,True
+735570,João Gomes,Wolves,Aston Villa,£38m[364],44460000.0,40000000,26299311.45575358,False,True
+249565,Youri Tielemans,Aston Villa,Manchester United,£35m[323],40950000.0,30000000,22691936.23188016,False,True
+1111589,El Hadji Malick Diouf,West Ham United,Brentford,£35m[632],40950000.0,28000000,27084716.70376698,False,True
+659813,Piero Hincapié,Arsenal,Arsenal,£34.5m[66],40365000.0,50000000,45114832.431039274,False,True
+355915,Cristian Romero,Tottenham Hotspur,Atlético Madrid,£34.2m[557],40014000.0,45000000,26270922.24010666,False,True
+433188,Curtis Jones,Liverpool,Inter Milan,£30m[585],35100000.0,35000000,49115487.41384715,True,True
+842341,Maxime Estève,Burnley,RB Leipzig,£27.3m[349],31940999.999999996,28000000,15568025.44635938,False,False
+346314,Trevoh Chalobah,Chelsea,Como,£25.7m[514],30069000.0,40000000,40631324.00877109,False,True
+483348,Djed Spence,Tottenham Hotspur,Inter Milan,£25.6m[558],29952000.0,30000000,27088080.206636377,False,True
+493003,Daniel Muñoz,Crystal Palace,Nottingham Forest,£22m[655],25740000.0,22000000,12500198.362039138,False,True
+411537,Zian Flemming,Burnley,Ipswich Town,£20m[669],23400000.0,12000000,15262650.625709075,False,True
+410708,Pascal Struijk,Leeds United,Brighton & Hove Albion,£20m[87],23400000.0,22000000,32429077.17745774,True,True
+144028,Leandro Trossard,Arsenal,Beşiktaş,£15.3m[331],17901000.0,18000000,28764584.07355871,True,True
+684210,Jaidon Anthony,Burnley,Brentford,£15m[266],17550000.0,20000000,21572084.771524157,False,True
+595809,Beto,Everton,Fiorentina,£14.6m[702],17082000.0,18000000,24044426.1372396,False,True
+696589,Tim Iroegbunam,Everton,Hull City,£13m[662],15210000.0,18000000,18120617.995771445,False,True
+126664,Lucas Digne,Aston Villa,Paris Saint-Germain,£8.5m[515],9945000.0,6000000,3906381.5781066143,False,True
+111873,Emiliano Martínez,Aston Villa,Chelsea,£7.5m[646],8775000.0,12000000,7790779.049947022,False,True
+67063,Danny Welbeck,Brighton,Chelsea,£5m[458],5850000.0,3000000,4283848.349825754,True,True
+181579,James Ward-Prowse,Burnley,Southampton,£1m[638],1170000.0,5000000,4365747.600004123,False,False

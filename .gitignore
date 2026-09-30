@@ -1,0 +1,18 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+
+# Raw source data (large, publicly redistributable Transfermarkt/FBref exports —
+# see README for download instructions to regenerate)
+backend/data/raw/*.csv
+
+# Editor
+.vscode/

@@ -1,0 +1,32 @@
+{
+  "outfield": {
+    "n": 314,
+    "mean_baseline": {
+      "label": "Mean prediction (baseline floor)",
+      "mae_eur": 17192427.469270945,
+      "rmse_eur": 26111022.550473347,
+      "r2_eur": -0.13304811120026905
+    },
+    "linear_regression": {
+      "label": "Linear regression",
+      "mae_eur": 8018598.955766278,
+      "rmse_eur": 12417446.13999263,
+      "r2_eur": 0.7437492404455586
+    }
+  },
+  "goalkeepers": {
+    "n": 113,
+    "mean_baseline": {
+      "label": "Mean prediction (baseline floor)",
+      "mae_eur": 7827263.482562859,
+      "rmse_eur": 11880129.97906501,
+      "r2_eur": -0.20166419201746488
+    },
+    "linear_regression": {
+      "label": "Linear regression",
+      "mae_eur": 4447382.759949504,
+      "rmse_eur": 7632078.992868585,
+      "r2_eur": 0.5040630703992305
+    }
+  }
+}
