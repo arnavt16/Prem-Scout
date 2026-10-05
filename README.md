@@ -2,7 +2,7 @@
 
 **What is every Premier League player worth?** Prem Scout compares each player's market value with what their 2025/26 season stats say they should cost, and picks out the players who look like good value.
 
-**Built by [Arnav Thorat](https://github.com/arnavt16)** · **Live site:** [prem-scout-three.vercel.app](https://prem-scout-three.vercel.app)
+**Built by [Arnav Thorat](https://github.com/arnavt16)** · **Live site:** [Website]([https://prem-scout-three.vercel.app](https://prem-scout-app.vercel.app/))
 
 ![Prem Scout home page](docs/screenshots/home.png)
 
